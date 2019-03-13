@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Feb 26 14:44:38 2019
+Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+Revision Name : Preprocessor
+Top-level Entity Name : Preprocessor1
+Family : Cyclone IV E
+Total logic elements : 79
+    Total combinational functions : 79
+    Dedicated logic registers : 35
+Total registers : 35
+Total pins : 1,029
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

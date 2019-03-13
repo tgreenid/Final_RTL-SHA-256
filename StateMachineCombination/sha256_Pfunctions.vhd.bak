@@ -1,0 +1,30 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+use work.sha256_datatypes.all;
+use work.sha256_constants.all;
+
+package sha256_Pfunctions is
+
+	function preProcess(x : std_logic_vector) return std_logic_vector;
+
+
+end package sha256_msfunctions;
+
+package body sha256_msfunctions is
+	function numBlock(output : std_logic_vector, nBlocks:integer) return integer is
+	begin
+	nBlocks<=output'length/512;
+	return integer(nBlocks);
+	end function numBlock;
+	
+	function preProcess(ss : string) return std_logic_vector is
+	begin
+	
+		return std_logic_vector();
+	end function s0;
+
+	
+	
+end package body sha256_Pfunctions;

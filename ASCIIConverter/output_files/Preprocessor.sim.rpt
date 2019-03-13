@@ -1,0 +1,439 @@
+Simulator report for Preprocessor
+Mon Feb 11 17:21:02 2019
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 140 nodes    ;
+; Simulation Coverage         ;       0.00 % ;
+; Total Number of Transitions ; 0            ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                                ;
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                              ; Default Value ;
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                           ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                                 ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                                  ;               ;
+; Vector input source                                                                        ; /home/student2/mnithiya/Desktop/CAPSTONE/ASCIIConverter/Waveform.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                                   ; On            ;
+; Check outputs                                                                              ; Off                                                                  ; Off           ;
+; Report simulation coverage                                                                 ; On                                                                   ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                                   ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                                   ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                                   ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                                  ; Off           ;
+; Detect glitches                                                                            ; Off                                                                  ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                                  ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                                  ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                                  ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                                  ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                                   ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                           ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                                  ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                                  ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                                 ; Auto          ;
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 32-bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;       0.00 % ;
+; Total nodes checked                                 ; 140          ;
+; Total output ports checked                          ; 139          ;
+; Total output ports with complete 1/0-value coverage ; 0            ;
+; Total output ports with no 1/0-value coverage       ; 139          ;
+; Total output ports with no 1-value coverage         ; 139          ;
+; Total output ports with no 0-value coverage         ; 139          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++-------------------------------------------------+
+; Complete 1/0-Value Coverage                     ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                               ;
++------------------------------------------+------------------------------------------+------------------+
+; Node Name                                ; Output Port Name                         ; Output Port Type ;
++------------------------------------------+------------------------------------------+------------------+
+; |Preprocessor|messsageLenVecotr[63]~reg0 ; |Preprocessor|messsageLenVecotr[63]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[62]~reg0 ; |Preprocessor|messsageLenVecotr[62]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[32]~reg0 ; |Preprocessor|messsageLenVecotr[32]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[31]~reg0 ; |Preprocessor|messsageLenVecotr[31]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[30]~reg0 ; |Preprocessor|messsageLenVecotr[30]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[29]~reg0 ; |Preprocessor|messsageLenVecotr[29]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[28]~reg0 ; |Preprocessor|messsageLenVecotr[28]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[27]~reg0 ; |Preprocessor|messsageLenVecotr[27]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[26]~reg0 ; |Preprocessor|messsageLenVecotr[26]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[25]~reg0 ; |Preprocessor|messsageLenVecotr[25]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[24]~reg0 ; |Preprocessor|messsageLenVecotr[24]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[23]~reg0 ; |Preprocessor|messsageLenVecotr[23]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[22]~reg0 ; |Preprocessor|messsageLenVecotr[22]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[21]~reg0 ; |Preprocessor|messsageLenVecotr[21]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[20]~reg0 ; |Preprocessor|messsageLenVecotr[20]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[19]~reg0 ; |Preprocessor|messsageLenVecotr[19]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[18]~reg0 ; |Preprocessor|messsageLenVecotr[18]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[17]~reg0 ; |Preprocessor|messsageLenVecotr[17]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[16]~reg0 ; |Preprocessor|messsageLenVecotr[16]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[15]~reg0 ; |Preprocessor|messsageLenVecotr[15]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[14]~reg0 ; |Preprocessor|messsageLenVecotr[14]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[13]~reg0 ; |Preprocessor|messsageLenVecotr[13]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[12]~reg0 ; |Preprocessor|messsageLenVecotr[12]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[11]~reg0 ; |Preprocessor|messsageLenVecotr[11]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[10]~reg0 ; |Preprocessor|messsageLenVecotr[10]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[9]~reg0  ; |Preprocessor|messsageLenVecotr[9]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[8]~reg0  ; |Preprocessor|messsageLenVecotr[8]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[7]~reg0  ; |Preprocessor|messsageLenVecotr[7]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[6]~reg0  ; |Preprocessor|messsageLenVecotr[6]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[5]~reg0  ; |Preprocessor|messsageLenVecotr[5]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[4]~reg0  ; |Preprocessor|messsageLenVecotr[4]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[3]~reg0  ; |Preprocessor|messsageLenVecotr[3]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[2]~reg0  ; |Preprocessor|messsageLenVecotr[2]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[1]~reg0  ; |Preprocessor|messsageLenVecotr[1]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[0]~reg0  ; |Preprocessor|messsageLenVecotr[0]~reg0  ; regout           ;
+; |Preprocessor|messageLength[63]          ; |Preprocessor|messageLength[63]          ; regout           ;
+; |Preprocessor|messageLength[62]          ; |Preprocessor|messageLength[62]          ; regout           ;
+; |Preprocessor|messageLength[32]          ; |Preprocessor|messageLength[32]          ; regout           ;
+; |Preprocessor|messageLength[31]          ; |Preprocessor|messageLength[31]          ; regout           ;
+; |Preprocessor|messageLength[30]          ; |Preprocessor|messageLength[30]          ; regout           ;
+; |Preprocessor|messageLength[29]          ; |Preprocessor|messageLength[29]          ; regout           ;
+; |Preprocessor|messageLength[28]          ; |Preprocessor|messageLength[28]          ; regout           ;
+; |Preprocessor|messageLength[27]          ; |Preprocessor|messageLength[27]          ; regout           ;
+; |Preprocessor|messageLength[26]          ; |Preprocessor|messageLength[26]          ; regout           ;
+; |Preprocessor|messageLength[25]          ; |Preprocessor|messageLength[25]          ; regout           ;
+; |Preprocessor|messageLength[24]          ; |Preprocessor|messageLength[24]          ; regout           ;
+; |Preprocessor|messageLength[23]          ; |Preprocessor|messageLength[23]          ; regout           ;
+; |Preprocessor|messageLength[22]          ; |Preprocessor|messageLength[22]          ; regout           ;
+; |Preprocessor|messageLength[21]          ; |Preprocessor|messageLength[21]          ; regout           ;
+; |Preprocessor|messageLength[20]          ; |Preprocessor|messageLength[20]          ; regout           ;
+; |Preprocessor|messageLength[19]          ; |Preprocessor|messageLength[19]          ; regout           ;
+; |Preprocessor|messageLength[18]          ; |Preprocessor|messageLength[18]          ; regout           ;
+; |Preprocessor|messageLength[17]          ; |Preprocessor|messageLength[17]          ; regout           ;
+; |Preprocessor|messageLength[16]          ; |Preprocessor|messageLength[16]          ; regout           ;
+; |Preprocessor|messageLength[15]          ; |Preprocessor|messageLength[15]          ; regout           ;
+; |Preprocessor|messageLength[14]          ; |Preprocessor|messageLength[14]          ; regout           ;
+; |Preprocessor|messageLength[13]          ; |Preprocessor|messageLength[13]          ; regout           ;
+; |Preprocessor|messageLength[12]          ; |Preprocessor|messageLength[12]          ; regout           ;
+; |Preprocessor|messageLength[11]          ; |Preprocessor|messageLength[11]          ; regout           ;
+; |Preprocessor|messageLength[10]          ; |Preprocessor|messageLength[10]          ; regout           ;
+; |Preprocessor|messageLength[9]           ; |Preprocessor|messageLength[9]           ; regout           ;
+; |Preprocessor|messageLength[8]           ; |Preprocessor|messageLength[8]           ; regout           ;
+; |Preprocessor|messageLength[7]           ; |Preprocessor|messageLength[7]           ; regout           ;
+; |Preprocessor|messageLength[6]           ; |Preprocessor|messageLength[6]           ; regout           ;
+; |Preprocessor|messageLength[5]           ; |Preprocessor|messageLength[5]           ; regout           ;
+; |Preprocessor|messageLength[4]           ; |Preprocessor|messageLength[4]           ; regout           ;
+; |Preprocessor|messageLength[3]           ; |Preprocessor|messageLength[3]           ; regout           ;
+; |Preprocessor|messageLength[2]           ; |Preprocessor|messageLength[2]           ; regout           ;
+; |Preprocessor|messageLength[1]           ; |Preprocessor|messageLength[1]           ; regout           ;
+; |Preprocessor|messageLength[0]           ; |Preprocessor|messageLength[0]           ; regout           ;
+; |Preprocessor|len[0]                     ; |Preprocessor|len[0]                     ; regout           ;
+; |Preprocessor|len[1]                     ; |Preprocessor|len[1]                     ; regout           ;
+; |Preprocessor|len[31]                    ; |Preprocessor|len[31]                    ; regout           ;
+; |Preprocessor|clk                        ; |Preprocessor|clk                        ; out              ;
+; |Preprocessor|ready                      ; |Preprocessor|ready                      ; out              ;
+; |Preprocessor|messsageLenVecotr[63]      ; |Preprocessor|messsageLenVecotr[63]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[62]      ; |Preprocessor|messsageLenVecotr[62]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[61]      ; |Preprocessor|messsageLenVecotr[61]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[60]      ; |Preprocessor|messsageLenVecotr[60]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[59]      ; |Preprocessor|messsageLenVecotr[59]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[58]      ; |Preprocessor|messsageLenVecotr[58]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[57]      ; |Preprocessor|messsageLenVecotr[57]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[56]      ; |Preprocessor|messsageLenVecotr[56]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[55]      ; |Preprocessor|messsageLenVecotr[55]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[54]      ; |Preprocessor|messsageLenVecotr[54]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[53]      ; |Preprocessor|messsageLenVecotr[53]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[52]      ; |Preprocessor|messsageLenVecotr[52]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[51]      ; |Preprocessor|messsageLenVecotr[51]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[50]      ; |Preprocessor|messsageLenVecotr[50]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[49]      ; |Preprocessor|messsageLenVecotr[49]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[48]      ; |Preprocessor|messsageLenVecotr[48]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[47]      ; |Preprocessor|messsageLenVecotr[47]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[46]      ; |Preprocessor|messsageLenVecotr[46]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[45]      ; |Preprocessor|messsageLenVecotr[45]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[44]      ; |Preprocessor|messsageLenVecotr[44]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[43]      ; |Preprocessor|messsageLenVecotr[43]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[42]      ; |Preprocessor|messsageLenVecotr[42]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[41]      ; |Preprocessor|messsageLenVecotr[41]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[40]      ; |Preprocessor|messsageLenVecotr[40]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[39]      ; |Preprocessor|messsageLenVecotr[39]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[38]      ; |Preprocessor|messsageLenVecotr[38]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[37]      ; |Preprocessor|messsageLenVecotr[37]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[36]      ; |Preprocessor|messsageLenVecotr[36]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[35]      ; |Preprocessor|messsageLenVecotr[35]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[34]      ; |Preprocessor|messsageLenVecotr[34]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[33]      ; |Preprocessor|messsageLenVecotr[33]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[32]      ; |Preprocessor|messsageLenVecotr[32]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[31]      ; |Preprocessor|messsageLenVecotr[31]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[30]      ; |Preprocessor|messsageLenVecotr[30]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[29]      ; |Preprocessor|messsageLenVecotr[29]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[28]      ; |Preprocessor|messsageLenVecotr[28]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[27]      ; |Preprocessor|messsageLenVecotr[27]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[26]      ; |Preprocessor|messsageLenVecotr[26]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[25]      ; |Preprocessor|messsageLenVecotr[25]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[24]      ; |Preprocessor|messsageLenVecotr[24]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[23]      ; |Preprocessor|messsageLenVecotr[23]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[22]      ; |Preprocessor|messsageLenVecotr[22]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[21]      ; |Preprocessor|messsageLenVecotr[21]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[20]      ; |Preprocessor|messsageLenVecotr[20]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[19]      ; |Preprocessor|messsageLenVecotr[19]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[18]      ; |Preprocessor|messsageLenVecotr[18]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[17]      ; |Preprocessor|messsageLenVecotr[17]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[16]      ; |Preprocessor|messsageLenVecotr[16]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[15]      ; |Preprocessor|messsageLenVecotr[15]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[14]      ; |Preprocessor|messsageLenVecotr[14]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[13]      ; |Preprocessor|messsageLenVecotr[13]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[12]      ; |Preprocessor|messsageLenVecotr[12]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[11]      ; |Preprocessor|messsageLenVecotr[11]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[10]      ; |Preprocessor|messsageLenVecotr[10]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[9]       ; |Preprocessor|messsageLenVecotr[9]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[8]       ; |Preprocessor|messsageLenVecotr[8]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[7]       ; |Preprocessor|messsageLenVecotr[7]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[6]       ; |Preprocessor|messsageLenVecotr[6]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[5]       ; |Preprocessor|messsageLenVecotr[5]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[4]       ; |Preprocessor|messsageLenVecotr[4]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[3]       ; |Preprocessor|messsageLenVecotr[3]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[2]       ; |Preprocessor|messsageLenVecotr[2]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[1]       ; |Preprocessor|messsageLenVecotr[1]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[0]       ; |Preprocessor|messsageLenVecotr[0]       ; pin_out          ;
++------------------------------------------+------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                               ;
++------------------------------------------+------------------------------------------+------------------+
+; Node Name                                ; Output Port Name                         ; Output Port Type ;
++------------------------------------------+------------------------------------------+------------------+
+; |Preprocessor|messsageLenVecotr[63]~reg0 ; |Preprocessor|messsageLenVecotr[63]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[62]~reg0 ; |Preprocessor|messsageLenVecotr[62]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[32]~reg0 ; |Preprocessor|messsageLenVecotr[32]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[31]~reg0 ; |Preprocessor|messsageLenVecotr[31]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[30]~reg0 ; |Preprocessor|messsageLenVecotr[30]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[29]~reg0 ; |Preprocessor|messsageLenVecotr[29]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[28]~reg0 ; |Preprocessor|messsageLenVecotr[28]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[27]~reg0 ; |Preprocessor|messsageLenVecotr[27]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[26]~reg0 ; |Preprocessor|messsageLenVecotr[26]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[25]~reg0 ; |Preprocessor|messsageLenVecotr[25]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[24]~reg0 ; |Preprocessor|messsageLenVecotr[24]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[23]~reg0 ; |Preprocessor|messsageLenVecotr[23]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[22]~reg0 ; |Preprocessor|messsageLenVecotr[22]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[21]~reg0 ; |Preprocessor|messsageLenVecotr[21]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[20]~reg0 ; |Preprocessor|messsageLenVecotr[20]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[19]~reg0 ; |Preprocessor|messsageLenVecotr[19]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[18]~reg0 ; |Preprocessor|messsageLenVecotr[18]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[17]~reg0 ; |Preprocessor|messsageLenVecotr[17]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[16]~reg0 ; |Preprocessor|messsageLenVecotr[16]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[15]~reg0 ; |Preprocessor|messsageLenVecotr[15]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[14]~reg0 ; |Preprocessor|messsageLenVecotr[14]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[13]~reg0 ; |Preprocessor|messsageLenVecotr[13]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[12]~reg0 ; |Preprocessor|messsageLenVecotr[12]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[11]~reg0 ; |Preprocessor|messsageLenVecotr[11]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[10]~reg0 ; |Preprocessor|messsageLenVecotr[10]~reg0 ; regout           ;
+; |Preprocessor|messsageLenVecotr[9]~reg0  ; |Preprocessor|messsageLenVecotr[9]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[8]~reg0  ; |Preprocessor|messsageLenVecotr[8]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[7]~reg0  ; |Preprocessor|messsageLenVecotr[7]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[6]~reg0  ; |Preprocessor|messsageLenVecotr[6]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[5]~reg0  ; |Preprocessor|messsageLenVecotr[5]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[4]~reg0  ; |Preprocessor|messsageLenVecotr[4]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[3]~reg0  ; |Preprocessor|messsageLenVecotr[3]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[2]~reg0  ; |Preprocessor|messsageLenVecotr[2]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[1]~reg0  ; |Preprocessor|messsageLenVecotr[1]~reg0  ; regout           ;
+; |Preprocessor|messsageLenVecotr[0]~reg0  ; |Preprocessor|messsageLenVecotr[0]~reg0  ; regout           ;
+; |Preprocessor|messageLength[63]          ; |Preprocessor|messageLength[63]          ; regout           ;
+; |Preprocessor|messageLength[62]          ; |Preprocessor|messageLength[62]          ; regout           ;
+; |Preprocessor|messageLength[32]          ; |Preprocessor|messageLength[32]          ; regout           ;
+; |Preprocessor|messageLength[31]          ; |Preprocessor|messageLength[31]          ; regout           ;
+; |Preprocessor|messageLength[30]          ; |Preprocessor|messageLength[30]          ; regout           ;
+; |Preprocessor|messageLength[29]          ; |Preprocessor|messageLength[29]          ; regout           ;
+; |Preprocessor|messageLength[28]          ; |Preprocessor|messageLength[28]          ; regout           ;
+; |Preprocessor|messageLength[27]          ; |Preprocessor|messageLength[27]          ; regout           ;
+; |Preprocessor|messageLength[26]          ; |Preprocessor|messageLength[26]          ; regout           ;
+; |Preprocessor|messageLength[25]          ; |Preprocessor|messageLength[25]          ; regout           ;
+; |Preprocessor|messageLength[24]          ; |Preprocessor|messageLength[24]          ; regout           ;
+; |Preprocessor|messageLength[23]          ; |Preprocessor|messageLength[23]          ; regout           ;
+; |Preprocessor|messageLength[22]          ; |Preprocessor|messageLength[22]          ; regout           ;
+; |Preprocessor|messageLength[21]          ; |Preprocessor|messageLength[21]          ; regout           ;
+; |Preprocessor|messageLength[20]          ; |Preprocessor|messageLength[20]          ; regout           ;
+; |Preprocessor|messageLength[19]          ; |Preprocessor|messageLength[19]          ; regout           ;
+; |Preprocessor|messageLength[18]          ; |Preprocessor|messageLength[18]          ; regout           ;
+; |Preprocessor|messageLength[17]          ; |Preprocessor|messageLength[17]          ; regout           ;
+; |Preprocessor|messageLength[16]          ; |Preprocessor|messageLength[16]          ; regout           ;
+; |Preprocessor|messageLength[15]          ; |Preprocessor|messageLength[15]          ; regout           ;
+; |Preprocessor|messageLength[14]          ; |Preprocessor|messageLength[14]          ; regout           ;
+; |Preprocessor|messageLength[13]          ; |Preprocessor|messageLength[13]          ; regout           ;
+; |Preprocessor|messageLength[12]          ; |Preprocessor|messageLength[12]          ; regout           ;
+; |Preprocessor|messageLength[11]          ; |Preprocessor|messageLength[11]          ; regout           ;
+; |Preprocessor|messageLength[10]          ; |Preprocessor|messageLength[10]          ; regout           ;
+; |Preprocessor|messageLength[9]           ; |Preprocessor|messageLength[9]           ; regout           ;
+; |Preprocessor|messageLength[8]           ; |Preprocessor|messageLength[8]           ; regout           ;
+; |Preprocessor|messageLength[7]           ; |Preprocessor|messageLength[7]           ; regout           ;
+; |Preprocessor|messageLength[6]           ; |Preprocessor|messageLength[6]           ; regout           ;
+; |Preprocessor|messageLength[5]           ; |Preprocessor|messageLength[5]           ; regout           ;
+; |Preprocessor|messageLength[4]           ; |Preprocessor|messageLength[4]           ; regout           ;
+; |Preprocessor|messageLength[3]           ; |Preprocessor|messageLength[3]           ; regout           ;
+; |Preprocessor|messageLength[2]           ; |Preprocessor|messageLength[2]           ; regout           ;
+; |Preprocessor|messageLength[1]           ; |Preprocessor|messageLength[1]           ; regout           ;
+; |Preprocessor|messageLength[0]           ; |Preprocessor|messageLength[0]           ; regout           ;
+; |Preprocessor|len[0]                     ; |Preprocessor|len[0]                     ; regout           ;
+; |Preprocessor|len[1]                     ; |Preprocessor|len[1]                     ; regout           ;
+; |Preprocessor|len[31]                    ; |Preprocessor|len[31]                    ; regout           ;
+; |Preprocessor|clk                        ; |Preprocessor|clk                        ; out              ;
+; |Preprocessor|ready                      ; |Preprocessor|ready                      ; out              ;
+; |Preprocessor|messsageLenVecotr[63]      ; |Preprocessor|messsageLenVecotr[63]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[62]      ; |Preprocessor|messsageLenVecotr[62]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[61]      ; |Preprocessor|messsageLenVecotr[61]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[60]      ; |Preprocessor|messsageLenVecotr[60]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[59]      ; |Preprocessor|messsageLenVecotr[59]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[58]      ; |Preprocessor|messsageLenVecotr[58]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[57]      ; |Preprocessor|messsageLenVecotr[57]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[56]      ; |Preprocessor|messsageLenVecotr[56]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[55]      ; |Preprocessor|messsageLenVecotr[55]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[54]      ; |Preprocessor|messsageLenVecotr[54]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[53]      ; |Preprocessor|messsageLenVecotr[53]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[52]      ; |Preprocessor|messsageLenVecotr[52]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[51]      ; |Preprocessor|messsageLenVecotr[51]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[50]      ; |Preprocessor|messsageLenVecotr[50]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[49]      ; |Preprocessor|messsageLenVecotr[49]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[48]      ; |Preprocessor|messsageLenVecotr[48]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[47]      ; |Preprocessor|messsageLenVecotr[47]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[46]      ; |Preprocessor|messsageLenVecotr[46]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[45]      ; |Preprocessor|messsageLenVecotr[45]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[44]      ; |Preprocessor|messsageLenVecotr[44]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[43]      ; |Preprocessor|messsageLenVecotr[43]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[42]      ; |Preprocessor|messsageLenVecotr[42]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[41]      ; |Preprocessor|messsageLenVecotr[41]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[40]      ; |Preprocessor|messsageLenVecotr[40]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[39]      ; |Preprocessor|messsageLenVecotr[39]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[38]      ; |Preprocessor|messsageLenVecotr[38]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[37]      ; |Preprocessor|messsageLenVecotr[37]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[36]      ; |Preprocessor|messsageLenVecotr[36]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[35]      ; |Preprocessor|messsageLenVecotr[35]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[34]      ; |Preprocessor|messsageLenVecotr[34]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[33]      ; |Preprocessor|messsageLenVecotr[33]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[32]      ; |Preprocessor|messsageLenVecotr[32]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[31]      ; |Preprocessor|messsageLenVecotr[31]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[30]      ; |Preprocessor|messsageLenVecotr[30]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[29]      ; |Preprocessor|messsageLenVecotr[29]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[28]      ; |Preprocessor|messsageLenVecotr[28]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[27]      ; |Preprocessor|messsageLenVecotr[27]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[26]      ; |Preprocessor|messsageLenVecotr[26]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[25]      ; |Preprocessor|messsageLenVecotr[25]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[24]      ; |Preprocessor|messsageLenVecotr[24]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[23]      ; |Preprocessor|messsageLenVecotr[23]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[22]      ; |Preprocessor|messsageLenVecotr[22]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[21]      ; |Preprocessor|messsageLenVecotr[21]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[20]      ; |Preprocessor|messsageLenVecotr[20]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[19]      ; |Preprocessor|messsageLenVecotr[19]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[18]      ; |Preprocessor|messsageLenVecotr[18]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[17]      ; |Preprocessor|messsageLenVecotr[17]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[16]      ; |Preprocessor|messsageLenVecotr[16]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[15]      ; |Preprocessor|messsageLenVecotr[15]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[14]      ; |Preprocessor|messsageLenVecotr[14]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[13]      ; |Preprocessor|messsageLenVecotr[13]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[12]      ; |Preprocessor|messsageLenVecotr[12]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[11]      ; |Preprocessor|messsageLenVecotr[11]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[10]      ; |Preprocessor|messsageLenVecotr[10]      ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[9]       ; |Preprocessor|messsageLenVecotr[9]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[8]       ; |Preprocessor|messsageLenVecotr[8]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[7]       ; |Preprocessor|messsageLenVecotr[7]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[6]       ; |Preprocessor|messsageLenVecotr[6]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[5]       ; |Preprocessor|messsageLenVecotr[5]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[4]       ; |Preprocessor|messsageLenVecotr[4]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[3]       ; |Preprocessor|messsageLenVecotr[3]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[2]       ; |Preprocessor|messsageLenVecotr[2]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[1]       ; |Preprocessor|messsageLenVecotr[1]       ; pin_out          ;
+; |Preprocessor|messsageLenVecotr[0]       ; |Preprocessor|messsageLenVecotr[0]       ; pin_out          ;
++------------------------------------------+------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Mon Feb 11 17:21:00 2019
+Info: Command: quartus_sim --simulation_results_format=VWF Preprocessor -c Preprocessor
+Info (324025): Using vector source file "/home/student2/mnithiya/Desktop/CAPSTONE/ASCIIConverter/Waveform.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is       0.00 %
+Info (328052): Number of transitions in simulation is 0
+Info (324045): Vector file Preprocessor.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 32-bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 273 megabytes
+    Info: Processing ended: Mon Feb 11 17:21:02 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

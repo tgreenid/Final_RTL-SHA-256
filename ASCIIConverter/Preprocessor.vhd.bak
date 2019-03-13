@@ -1,0 +1,62 @@
+library ieee;
+USE ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.math_real.all;
+ENTITY Preprocessor IS
+	PORT(clk: IN STD_LOGIC;
+		  reset : IN STD_LOGIC;
+		  ready : IN STD_LOGIC;
+		  messageString : IN string(1 to 2):="ab";
+		  messageBit : OUT std_logic_vector(1 to 512)
+		  );
+end Preprocessor;
+
+ARCHITECTURE behavioral of Preprocessor IS
+	--signal input : string(1 to 2);
+	constant ss : string (1 to messageString'length) :=messageString;
+	signal output: std_logic_vector(1 to messageString'length*8);
+	signal p : integer;
+	signal c : integer;
+	signal len: integer;
+	signal a,b,d,x: integer;
+	signal kZeros:integer;
+	signal messageLength : std_LOGIC_VECTOR(1 to 64);
+	
+	
+	begin
+		PROCESS(clk,reset,ready)
+		begin	
+			if(clk'Event and clk='1' and ready ='1')then
+				--input <= messageString;
+				len <= ss'length;
+				messageLength<= std_logic_vector(to_unsigned(len,64));
+				
+				a<=len+72;
+				x<=a/1000000000;
+				--b<=CEIL(x);
+				d<=x*1000000000;
+				kZeros<=a-d+7;
+
+				for i in ss'range loop
+					p<= 8*i;
+					c<=character'pos(ss(i));
+					output(p-7 to p)<= std_logic_vector(to_unsigned(c,8));
+				end loop;
+				--characteroutput<= messageString(character'pos(1))
+				
+				--int<= integer'value(input);
+				--output<=std_LOGIC_VECTOR(to_unsigned(int,messageString'length*8));
+				--for i in input'range loop
+					--output(7 downto 0) <= std_logic_vector(to_unsigned(integer'value(character'pos(1)), 8));
+					--output(15 downto 8) <= std_logic_vector(to_unsigned(integer'value(character'pos(2)), 8));
+				--end loop;
+				messageBit(1 to messageString'length*8)<= output;
+				messageBit(messageString'length*8+1)<='1';
+				for i in 1 to 488 loop
+					exit when i=kZeros;
+					messageBit((len*8)+i+1)<='0'; 
+				end loop;
+				messageBit(449 to 512)<=messageLength;
+			end if;
+		end process;
+end behavioral;

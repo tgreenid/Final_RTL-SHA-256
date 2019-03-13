@@ -1,0 +1,81 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "lastBlock",
+					"strict" : false
+				},
+				{
+					"name" : "messageBit[508]",
+					"strict" : false
+				},
+				{
+					"name" : "messageBit[507]",
+					"strict" : false
+				},
+				{
+					"name" : "messageBit[24]",
+					"strict" : false
+				},
+				{
+					"name" : "messageBit[23]",
+					"strict" : false
+				},
+				{
+					"name" : "messageBit[22]",
+					"strict" : false
+				},
+				{
+					"name" : "messageBit[18]",
+					"strict" : false
+				},
+				{
+					"name" : "messageBit[17]",
+					"strict" : false
+				},
+				{
+					"name" : "messageBit[14]",
+					"strict" : false
+				},
+				{
+					"name" : "messageBit[10]",
+					"strict" : false
+				},
+				{
+					"name" : "messageBit[9]",
+					"strict" : false
+				},
+				{
+					"name" : "messageBit[7]",
+					"strict" : false
+				},
+				{
+					"name" : "messageBit[2]",
+					"strict" : false
+				},
+				{
+					"name" : "messageBit[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ready",
+					"strict" : false
+				},
+				{
+					"name" : "readyBlock",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
