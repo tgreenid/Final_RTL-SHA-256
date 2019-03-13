@@ -36,7 +36,7 @@ package body sha256_Pfunctions is
 	variable k : unsigned(0 to 63):=k0;
 	begin
 		k:=(447- len_unsigned) mod 512;	
-	return unsigned(k);
+	return (k);
 	end function numZeros;
 	
 	function preProcess(ss : string;output: std_logic_vector;k0:unsigned;len_unsigned:unsigned;messageLength:std_logic_vector) return std_logic_vector is
@@ -53,7 +53,7 @@ package body sha256_Pfunctions is
 				for i in 0 to 63 loop
 					o(o'length-64+i):=messageLength(i);
 				end loop;
-	return std_logic_vector(o);
+	return(o);
 	end function preProcess;
 
 	function setBlock(output : std_logic_vector;message : std_logic_vector; i : integer) return std_logic_vector is
@@ -70,7 +70,7 @@ package body sha256_Pfunctions is
 				m(i):=output(x*512+i);
 			end loop;
 		end if;
-	return std_logic_vector(m);
+	return(m);
 	end function setBlock;
 	
 end package body sha256_Pfunctions;
