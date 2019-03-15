@@ -18,7 +18,7 @@ port(
 		--len:out std_logic_vector(0 to 63);
 		--kval 			: out std_logic_vector(6 downto 0);
       digest 		: out std_logic_vector( 255 downto 0);
-		
+		ss_t: out string(1 to 3);
 	   message_t,output_t		: out std_logic_vector(0 to 511);
 		messageLength_t : out std_LOGIC_VECTOR(0 to 63);
 		len_unsigned_t,k0_t : out unsigned(0 to 63);
@@ -131,6 +131,7 @@ process(clock,lastBlock, blockSet)
 			end if;
 			
 		when PreProcessor =>
+		ss_t<= ss;
 		state<="001";
 		if (lastBlock='1')then
 			ss<="aaa";
@@ -138,57 +139,83 @@ process(clock,lastBlock, blockSet)
 		else
 			if (readyBlock='1') then
 				nBlocks<= output'length/512;
-				nBlocks_t <= output'length/512;
 				l<=output'length;
 				if(nBlocks /= 0)then
 						x<=1;
 				end if;
+				nBlocks_t <= nBlocks;
 				
-				x_t <= x;
-
---				len_unsigned_t <= shift_left(to_unsigned(ss'length,64),3);
---				--len_unsigned<=len_unsigned_t;
---				messageLength_t<= std_logic_vector(shift_left(to_unsigned(ss'length,64),3));
---				k0_t <= (447- (shift_left(to_unsigned(ss'length,64),3))) mod 512;
---				output_t<=preProcess(ss,output,k0,shift_left(to_unsigned(ss'length,64),3),std_logic_vector(shift_left(to_unsigned(ss'length,64),3)));
---				message_t <= setBlock(output,message,x);
-				lastBlock_t<=lastBlock;
-				readyBlock_t<=readyBlock;
+				
+				x_t <= x after 10 ns;
+--
+----				len_unsigned_t <= shift_left(to_unsigned(ss'length,64),3);
+----				len_unsigned<=len_unsigned_t;
+----				messageLength_t<= std_logic_vector(shift_left(to_unsigned(ss'length,64),3));
+----				k0_t <= (447- (shift_left(to_unsigned(ss'length,64),3))) mod 512;
+----				output_t<=preProcess(ss,output,k0,shift_left(to_unsigned(ss'length,64),3),std_logic_vector(shift_left(to_unsigned(ss'length,64),3)));
+----				message_t <= setBlock(output,message,x);
+					lastBlock_t<=lastBlock;
+					readyBlock_t<=readyBlock;
+				
 				len_unsigned<=shift_left(to_unsigned(ss'length,64),3);
-				messageLength<=std_logic_vector(shift_left(to_unsigned(ss'length,64),3));
-				k0<=(447- (shift_left(to_unsigned(ss'length,64),3))) mod 512;	
-				output<=preProcess(ss,output,k0,shift_left(to_unsigned(ss'length,64),3),messageLength);
-				message<=setBlock(output,message,x) after 20 ns;
-				
 				len_unsigned_t<=len_unsigned after 10 ns;
+				messageLength<=std_logic_vector(len_unsigned)AFTER 10 ns;
 				messageLength_t<=messageLength after 10 ns;
-				k0_t<=k0 after 10 ns;
-				output_t<=output after 10 ns;
-				message_t<=message after 10 ns;
-				L1:for ii in 0 to 15 loop
-					L2:for jj in  31 downto 0 loop
-						SubBlock(ii)<=message(ii*32 to (ii*32)+31);
-					end loop L2;
-				end loop L1;
-				if(x=(nBlocks))then
-						lastBlock<='1';
-				else
-					lastBlock<='0';
-				end if;
-			elsif(readyBlock='0')then
-					message<=setBlock(output,message,x);
-					L3:for ii in 0 to 15 loop
-						L4:for jj in  31 downto 0 loop
-							SubBlock(ii)<=message(ii*32 to (ii*32)+31);
-						end loop L4;
-					end loop L3;
-				if(x=(nBlocks))then
-						lastBlock<='1';
-				else
-					lastBlock<='0';
-				end if;	
-			end if;
+				k0<=(447- len_unsigned) mod 512;
+				k0_t<=k0 after 10ns;
+				
+				output(TO_INTEGER(len_unsigned))<='1'after 10 ns;
+				for m in 1 to 447 loop
+					exit when m=((TO_INTEGER(k0))+1);
+					output((TO_INTEGER(len_unsigned)) +m)<='0'; 
+				end loop;	
+					output_t<=output after 10 ns;
+				for m in  ss'range loop
+					output((8*m)-8 to (8*m)-1)<=std_logic_vector(to_unsigned(character'pos(ss(m)),8));
+				end loop;
+				output_t<=output after 50 ns;
+				for m in 0 to 63 loop
+					output(output'length-64+m)<=messageLength(m) after 20 ns;
+				end loop;
+				output_t<=output after 50 ns;
+
+				message<=setBlock(output,message,x);
+				message_t<=message after 50 ns;
+				
+				for m in 0 to 15 loop
+					SubBlock(m)<=message(m*32 to (m*32)+31);
+				end loop;
+
+--				len_unsigned_t<=len_unsigned after 15 ns;
+--				messageLength_t<=messageLength after 10 ns;
+--				k0_t<=k0 after 20 ns;
+--				output_t<=output after 50 ns;
+--				message_t<=message after 10 ns;
+--				L1:for ii in 0 to 15 loop
+--					L2:for jj in  31 downto 0 loop
+--						SubBlock(ii)<=message(ii*32 to (ii*32)+31);
+--					end loop L2;
+--				end loop L1;
+--				if(x=(nBlocks))then
+--						lastBlock<='1';
+--				else
+--					lastBlock<='0';
+--				end if;
+--			elsif(readyBlock='0')then
+--					message<=setBlock(output,message,x);
+--					L3:for ii in 0 to 15 loop
+--						L4:for jj in  31 downto 0 loop
+--							SubBlock(ii)<=message(ii*32 to (ii*32)+31);
+--						end loop L4;
+--					end loop L3;
+--				if(x=(nBlocks))then
+--						lastBlock<='1';
+--				else
+--					lastBlock<='0';
+--				end if;	
+--			end if;
 			current_state<=ScheduleMessage;
+		end if;
 		end if;
 	
 			

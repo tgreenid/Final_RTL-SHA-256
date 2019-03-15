@@ -1,85 +1,88 @@
 m255
 K3
+z0
 13
 cModel Technology
-Z0 dC:\Users\Brian\Desktop\Capstone\Demofile\simulation\qsim
+dC:\Users\Brian\Desktop\Capstone\Demofile\simulation\qsim
 vCompressionFunction
-Z1 !s100 MbI?m_;Q9a8d5_][c;Nf83
-Z2 IFIc;405F2e>NOo?>5`LWm1
-Z3 VW8>QHjHRCQNj_FV2GkWh62
-Z4 dC:\Users\Brian\Desktop\Capstone\Gitrepo\RTL-SHA-256\StateMachineCombination\simulation\qsim
-Z5 w1551380444
-Z6 8CompressionFunction.vo
-Z7 FCompressionFunction.vo
-L0 31
-Z8 OV;L;10.1d;51
-r1
-31
-Z9 !s90 -work|work|CompressionFunction.vo|
-Z10 o-work work -O0
-Z11 n@compression@function
+!s110 1552621154
 !i10b 1
+!s100 _To`O1:]ZPz8PeM`i>GJc1
+IjI6Bk[Ee54OKGMF^2ME5V3
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+Z1 dC:/Users/user/Desktop/Final_RTL-SHA-256/StateMachineCombination/simulation/qsim
+w1552621149
+8CompressionFunction.vo
+FCompressionFunction.vo
+L0 32
+Z2 OV;L;10.4d;61
+r1
 !s85 0
-Z12 !s108 1551380446.572000
-Z13 !s107 CompressionFunction.vo|
-!s101 -O0
+31
+!s108 1552621153.000000
+!s107 CompressionFunction.vo|
+!s90 -work|work|CompressionFunction.vo|
+!i113 1
+Z3 o-work work
+n@compression@function
 vCompressionFunction_vlg_check_tst
 !i10b 1
 !s100 CJX4bSZBgWaZiVa47A28]3
 IHRQ3dhfkadA5QDbQN7jaF2
-Z14 VhFWWP1TUooGn0^T01V=gX2
-R4
-Z15 w1551380439
-Z16 8CompressionFunction.vt
-Z17 FCompressionFunction.vt
+VhFWWP1TUooGn0^T01V=gX2
+Z4 dC:\Users\Brian\Desktop\Capstone\Gitrepo\RTL-SHA-256\StateMachineCombination\simulation\qsim
+Z5 w1551380439
+Z6 8CompressionFunction.vt
+Z7 FCompressionFunction.vt
 L0 61
-R8
+Z8 OV;L;10.1d;51
 r1
 !s85 0
 31
-Z18 !s108 1551380450.022000
-Z19 !s107 CompressionFunction.vt|
-Z20 !s90 -work|work|CompressionFunction.vt|
+Z9 !s108 1551380450.022000
+Z10 !s107 CompressionFunction.vt|
+Z11 !s90 -work|work|CompressionFunction.vt|
 !s101 -O0
-R10
-Z21 n@compression@function_vlg_check_tst
+Z12 o-work work -O0
+n@compression@function_vlg_check_tst
 vCompressionFunction_vlg_sample_tst
 !i10b 1
-Z22 !s100 oXH8j:Y7GF]b_koRdd;LX1
-Z23 IKoFJjO6hFceAPQT@7`Pj_3
-Z24 Vn@a9X6GLh=CK7`7a]B6Im3
+!s100 oXH8j:Y7GF]b_koRdd;LX1
+IKoFJjO6hFceAPQT@7`Pj_3
+Vn@a9X6GLh=CK7`7a]B6Im3
 R4
-R15
-R16
-R17
+R5
+R6
+R7
 L0 29
 R8
 r1
 !s85 0
 31
-R18
-R19
-R20
-!s101 -O0
+R9
 R10
-Z25 n@compression@function_vlg_sample_tst
+R11
+!s101 -O0
+R12
+n@compression@function_vlg_sample_tst
 vCompressionFunction_vlg_vec_tst
+!s110 1552621155
 !i10b 1
-!s100 JoXX7D;`AV=b5iT=fhBf51
-IEDBji<Ko6UfT?;T>deIZc2
-Z26 VT[hhcRze2<_JHQc?bgDNP0
-R4
-R15
-R16
-R17
-Z27 L0 8954
-R8
+!s100 A43k2X?JRkT;bRAZ;G5kW3
+I9VDZg;hNbKNV`jz04kJgS0
+R0
+R1
+w1552621145
+8Waveform6.vwf.vt
+FWaveform6.vwf.vt
+L0 30
+R2
 r1
 !s85 0
 31
-R18
-R19
-R20
-!s101 -O0
-R10
-Z28 n@compression@function_vlg_vec_tst
+!s108 1552621154.000000
+!s107 Waveform6.vwf.vt|
+!s90 -work|work|Waveform6.vwf.vt|
+!i113 1
+R3
+n@compression@function_vlg_vec_tst

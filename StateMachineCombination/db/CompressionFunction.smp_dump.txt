@@ -1,0 +1,8 @@
+
+State Machine - |CompressionFunction|current_state
+Name current_state.Append current_state.CompressBlock current_state.ScheduleMessage current_state.PreProcessor current_state.Idle 
+current_state.Idle 0 0 0 0 0 
+current_state.PreProcessor 0 0 0 1 1 
+current_state.ScheduleMessage 0 0 1 0 1 
+current_state.CompressBlock 0 1 0 0 1 
+current_state.Append 1 0 0 0 1 

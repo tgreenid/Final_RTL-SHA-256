@@ -1,0 +1,213 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "state[0]",
+					"strict" : false
+				},
+				{
+					"name" : "state[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ss_t[3][0]",
+					"strict" : false
+				},
+				{
+					"name" : "ss_t[3][1]",
+					"strict" : false
+				},
+				{
+					"name" : "ss_t[3][5]",
+					"strict" : false
+				},
+				{
+					"name" : "ss_t[3][6]",
+					"strict" : false
+				},
+				{
+					"name" : "ss_t[2][1]",
+					"strict" : false
+				},
+				{
+					"name" : "ss_t[2][5]",
+					"strict" : false
+				},
+				{
+					"name" : "ss_t[2][6]",
+					"strict" : false
+				},
+				{
+					"name" : "ss_t[1][0]",
+					"strict" : false
+				},
+				{
+					"name" : "ss_t[1][5]",
+					"strict" : false
+				},
+				{
+					"name" : "ss_t[1][6]",
+					"strict" : false
+				},
+				{
+					"name" : "message_t[508]",
+					"strict" : false
+				},
+				{
+					"name" : "message_t[507]",
+					"strict" : false
+				},
+				{
+					"name" : "message_t[24]",
+					"strict" : false
+				},
+				{
+					"name" : "output_t[508]",
+					"strict" : false
+				},
+				{
+					"name" : "output_t[507]",
+					"strict" : false
+				},
+				{
+					"name" : "output_t[24]",
+					"strict" : false
+				},
+				{
+					"name" : "messageLength_t[60]",
+					"strict" : false
+				},
+				{
+					"name" : "messageLength_t[59]",
+					"strict" : false
+				},
+				{
+					"name" : "len_unsigned_t[60]",
+					"strict" : false
+				},
+				{
+					"name" : "len_unsigned_t[59]",
+					"strict" : false
+				},
+				{
+					"name" : "k0_t[63]",
+					"strict" : false
+				},
+				{
+					"name" : "k0_t[62]",
+					"strict" : false
+				},
+				{
+					"name" : "k0_t[61]",
+					"strict" : false
+				},
+				{
+					"name" : "k0_t[60]",
+					"strict" : false
+				},
+				{
+					"name" : "k0_t[59]",
+					"strict" : false
+				},
+				{
+					"name" : "k0_t[58]",
+					"strict" : false
+				},
+				{
+					"name" : "k0_t[56]",
+					"strict" : false
+				},
+				{
+					"name" : "k0_t[55]",
+					"strict" : false
+				},
+				{
+					"name" : "nBlocks_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "nBlocks_t[31]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[0]",
+					"strict" : false
+				},
+				{
+					"name" : "x_t[31]",
+					"strict" : false
+				},
+				{
+					"name" : "l[0]",
+					"strict" : false
+				},
+				{
+					"name" : "l[9]",
+					"strict" : false
+				},
+				{
+					"name" : "l[31]",
+					"strict" : false
+				},
+				{
+					"name" : "outmem[3]",
+					"strict" : false
+				},
+				{
+					"name" : "outmem[4]",
+					"strict" : false
+				},
+				{
+					"name" : "outmem[7]",
+					"strict" : false
+				},
+				{
+					"name" : "outmem[8]",
+					"strict" : false
+				},
+				{
+					"name" : "outmem[9]",
+					"strict" : false
+				},
+				{
+					"name" : "outmem[13]",
+					"strict" : false
+				},
+				{
+					"name" : "outmem[14]",
+					"strict" : false
+				},
+				{
+					"name" : "outmem[17]",
+					"strict" : false
+				},
+				{
+					"name" : "outmem[21]",
+					"strict" : false
+				},
+				{
+					"name" : "outmem[22]",
+					"strict" : false
+				},
+				{
+					"name" : "outmem[24]",
+					"strict" : false
+				},
+				{
+					"name" : "outmem[29]",
+					"strict" : false
+				},
+				{
+					"name" : "outmem[30]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
