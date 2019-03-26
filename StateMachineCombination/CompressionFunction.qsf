@@ -36,12 +36,12 @@
 # -------------------------------------------------------------------------- #
 
 
-set_global_assignment -name FAMILY "Cyclone V"
-set_global_assignment -name DEVICE 5CGXFC7C7F23C8
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C35F672C6
 set_global_assignment -name TOP_LEVEL_ENTITY CompressionFunction
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:45:40  FEBRUARY 05, 2019"
-set_global_assignment -name LAST_QUARTUS_VERSION 16.0.0
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -64,5 +64,74 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE messagesched3.vwf
 set_global_assignment -name VHDL_FILE sha256_Pfunctions.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform6.vwf
 set_global_assignment -name VECTOR_OUTPUT_FORMAT VWF
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/stephanietreacy/Desktop/RTL-SHA-256/StateMachineCombination/Waveform6.vwf"
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform7.vwf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/Brian/Desktop/finalcapstone/StateMachineCombination/Waveform7.vwf"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity digestdebug -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity digestdebug -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -entity digestdebug -section_id Top
+set_location_assignment PIN_R2 -to led1[1]
+set_location_assignment PIN_P4 -to led1[2]
+set_location_assignment PIN_P3 -to led1[3]
+set_location_assignment PIN_M2 -to led1[4]
+set_location_assignment PIN_M3 -to led1[5]
+set_location_assignment PIN_M5 -to led1[6]
+set_location_assignment PIN_M4 -to led1[7]
+set_location_assignment PIN_T2 -to led2[1]
+set_location_assignment PIN_P6 -to led2[2]
+set_location_assignment PIN_P7 -to led2[3]
+set_location_assignment PIN_T9 -to led2[4]
+set_location_assignment PIN_R5 -to led2[5]
+set_location_assignment PIN_R4 -to led2[6]
+set_location_assignment PIN_R3 -to led2[7]
+set_location_assignment PIN_U9 -to led3[1]
+set_location_assignment PIN_U1 -to led3[2]
+set_location_assignment PIN_U2 -to led3[3]
+set_location_assignment PIN_T4 -to led3[4]
+set_location_assignment PIN_R7 -to led3[5]
+set_location_assignment PIN_R6 -to led3[6]
+set_location_assignment PIN_T3 -to led3[7]
+set_location_assignment PIN_Y23 -to led4[1]
+set_location_assignment PIN_AA25 -to led4[2]
+set_location_assignment PIN_AA26 -to led4[3]
+set_location_assignment PIN_Y26 -to led4[4]
+set_location_assignment PIN_Y25 -to led4[5]
+set_location_assignment PIN_U22 -to led4[6]
+set_location_assignment PIN_W24 -to led4[7]
+set_location_assignment PIN_AB23 -to led5[1]
+set_location_assignment PIN_V22 -to led5[2]
+set_location_assignment PIN_AC25 -to led5[3]
+set_location_assignment PIN_AC26 -to led5[4]
+set_location_assignment PIN_AB26 -to led5[5]
+set_location_assignment PIN_AB25 -to led5[6]
+set_location_assignment PIN_Y24 -to led5[7]
+set_location_assignment PIN_V20 -to led6[1]
+set_location_assignment PIN_V21 -to led6[2]
+set_location_assignment PIN_W21 -to led6[3]
+set_location_assignment PIN_Y22 -to led6[4]
+set_location_assignment PIN_AA24 -to led6[5]
+set_location_assignment PIN_AA23 -to led6[6]
+set_location_assignment PIN_AB24 -to led6[7]
+set_location_assignment PIN_AF10 -to led7[1]
+set_location_assignment PIN_AB12 -to led7[2]
+set_location_assignment PIN_AC12 -to led7[3]
+set_location_assignment PIN_AD11 -to led7[4]
+set_location_assignment PIN_AE11 -to led7[5]
+set_location_assignment PIN_V14 -to led7[6]
+set_location_assignment PIN_V13 -to led7[7]
+set_location_assignment PIN_N25 -to sw0
+set_location_assignment PIN_N26 -to sw1
+set_location_assignment PIN_L3 -to led[1]
+set_location_assignment PIN_L2 -to led[2]
+set_location_assignment PIN_L9 -to led[3]
+set_location_assignment PIN_L6 -to led[4]
+set_location_assignment PIN_L7 -to led[5]
+set_location_assignment PIN_P9 -to led[6]
+set_location_assignment PIN_N9 -to led[7]
+set_location_assignment PIN_P25 -to sw2
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity digestdebug -section_id Top
+set_location_assignment PIN_N2 -to clock
+set_location_assignment PIN_AE22 -to state_out[0]
+set_location_assignment PIN_AF22 -to state_out[1]
+set_location_assignment PIN_W19 -to state_out[2]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

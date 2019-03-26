@@ -1,17 +1,14 @@
-Analysis & Synthesis Status : Successful - Thu Mar 14 23:38:36 2019
-Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+Analysis & Synthesis Status : Successful - Thu Mar 21 12:47:18 2019
+Quartus II 32-bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : CompressionFunction
 Top-level Entity Name : CompressionFunction
-Family : Cyclone V
-Logic utilization (in ALMs) : N/A
-Total registers : 71
-Total pins : 1,630
+Family : Cyclone II
+Total logic elements : 8,961
+    Total combinational functions : 6,823
+    Dedicated logic registers : 2,956
+Total registers : 2956
+Total pins : 63
 Total virtual pins : 0
-Total block memory bits : 0
-Total DSP Blocks : 0
-Total HSSI RX PCSs : 0
-Total HSSI PMA RX Deserializers : 0
-Total HSSI TX PCSs : 0
-Total HSSI PMA TX Serializers : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0
-Total DLLs : 0

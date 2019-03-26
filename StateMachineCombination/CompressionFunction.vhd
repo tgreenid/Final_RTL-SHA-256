@@ -8,39 +8,65 @@ use work.sha256_constants.all;
 use work.sha256_msfunctions.all;
 use work.sha256_Pfunctions.all;
 
-entity CompressionFunction is
-port(
+pport(
       clock 		: in std_logic;
-		state : out std_logic_vector(2 downto 0);
+		state_out : out std_logic_vector(2 downto 0);
 		--compressdone : out std_logic;
 		--n,l : out integer;
 		--mes:out std_logic_vector(0 to 511);
 		--len:out std_logic_vector(0 to 63);
 		--kval 			: out std_logic_vector(6 downto 0);
-      digest 		: out std_logic_vector( 255 downto 0);
-		ss_t: out string(1 to 3);
-	   message_t,output_t		: out std_logic_vector(0 to 511);
-		messageLength_t : out std_LOGIC_VECTOR(0 to 63);
-		len_unsigned_t,k0_t : out unsigned(0 to 63);
-		nBlocks_t,x_t,l	:out integer;
-		lastBlock_t   : out std_logic;
-		--blockSet_t 	: out std_logic;
-		readyBlock_t   : out std_logic;
+--      digest 		: out std_logic_vector( 255 downto 0);
+--		
+--	   message_t,output_t		: out std_logic_vector(0 to 511);
+--		messageLength_t : out std_LOGIC_VECTOR(0 to 63);
+--		len_unsigned_t,k0_t : out unsigned(0 to 63);
+--		nBlocks_t,x_t,l,count	:out integer;
+--		lastBlock_t   : out std_logic;
+--		--blockSet_t 	: out std_logic;
+--		readyBlock_t   : out std_logic;
 		
+--		a_t : out std_logic_vector( 31 downto 0 ); 
+--		b_t : out std_logic_vector( 31 downto 0 ); 
+--		c_t : out std_logic_vector( 31 downto 0 ); 
+--		d_t : out std_logic_vector( 31 downto 0 ); 
+--		e_t : out std_logic_vector( 31 downto 0 ); 
+--		f_t : out std_logic_vector( 31 downto 0 ); 
+--		g_t : out std_logic_vector( 31 downto 0 ); 
+--		h_t : out std_logic_vector( 31 downto 0 );
+--		
+--		T1_t : out std_logic_vector( 31 downto 0 ); 
+--		T2_t : out std_logic_vector( 31 downto 0 );
+--		j_t : out integer;
+		
+--		temp : out std_LOGIC_VECTOR(31 downto 0);
 		--H_test : out std_LOGIC_VECTOR(255 downto 0);
 		--sched 		: out std_logic_vector(31 downto 0);
 		--sched1 		: out std_logic_vector(31 downto 0);
 		--sched32 		: out std_logic_vector(31 downto 0);
-		--sched63 		: out std_logic_vector(31 downto 0);
-		outmem		: out std_logic_vector(31 downto 0)
+--		sched63 		: out std_logic_vector(31 downto 0);
+--		outmem		: out std_logic_vector(31 downto 0)
 		--temp1		: out std_logic_vector(31 downto 0);
 		--addrout 		: out std_logic_vector(3 downto 0)
+		
+		   sw0: IN STD_LOGIC;
+			sw1: IN STD_LOGIC;
+			sw2: IN STD_LOGIC;
+			led:OUT STD_LOGIC_VECTOR (1 TO 7);
+	      led1:OUT STD_LOGIC_VECTOR (1 TO 7);
+	      led2:OUT STD_LOGIC_VECTOR (1 TO 7);
+	      led3:OUT STD_LOGIC_VECTOR (1 TO 7);
+         led4:OUT STD_LOGIC_VECTOR (1 TO 7);
+	      led5:OUT STD_LOGIC_VECTOR (1 TO 7);
+	      led6:OUT STD_LOGIC_VECTOR (1 TO 7);
+	      led7:OUT STD_LOGIC_VECTOR (1 TO 7)
     );
 end entity;
 
 architecture behaviour of CompressionFunction is
 --Digest Signals
   signal Hdigest : std_logic_vector( 255 downto 0 ):= H0&H1&H2&H3&H4&H5&H6&H7;
+  signal digest : std_logic_vector( 255 downto 0 );
   signal a : std_logic_vector( 31 downto 0 ):=H0; 
   signal b : std_logic_vector( 31 downto 0 ):=H1;
   signal c : std_logic_vector( 31 downto 0 ):=H2;
@@ -51,44 +77,52 @@ architecture behaviour of CompressionFunction is
   signal h : std_logic_vector( 31 downto 0 ):=H7;
   
   --Compression Function Signals
-  signal T1, T2, Sigma0, Sigma1, maj, ch : std_logic_vector( 31 downto 0 );
   signal compressed : std_logic := '0';
   signal lastB : boolean;
-  signal j			 : std_logic_vector(6 downto 0):="0000000";
+  signal j			 : integer:=0;
   signal memaddr 	: std_logic_vector(3 downto 0):= "0000";
   signal memout 	: std_logic_vector(31 downto 0);
   signal flag 	: std_logic:='0';
   
   --Message Scheduler Signals
   signal schedule : padded_message_block_array;
-  signal k		  : std_logic_vector(6 downto 0) := "0000000";
+  signal k		  : integer:=0;
   signal gateval1 : std_logic_vector(6 downto 0) := "1000000";
   signal gateval2 : std_logic_vector(6 downto 0) := "0010000";
   
+      --Compression Function Signals
+  signal T1 :std_logic_vector( 31 downto 0 ) := std_logic_vector(unsigned(h)+ unsigned(schedule(0)) + unsigned(Z1(e)) + unsigned(ch(e,f,g)) + unsigned(constants(0)));
+  signal T2 :std_logic_vector( 31 downto 0 ) := std_logic_vector(unsigned(maj(a,b,c)) + unsigned(Z0(a)));
+  
   --PreProcessor Funciton Signals
-	signal ss : string(1 to 3) :="abc";
+	signal ss : string(1 to 23) :="Tabitha Greenidge ! @ #";
 	signal output:std_logic_vector(0 to ss'length*8 +(447- ss'length*8) mod 512+64);
 	signal message:std_logic_vector(0 to 511);
 	signal messageLength : std_LOGIC_VECTOR(0 to 63);
 	signal len_unsigned,k0 : unsigned(0 to 63):=to_unsigned(0,64);
-	signal nBlocks,x:integer:=0;
+	signal nBlocks,x,o:integer:=0;
 	signal lastBlock   : std_logic:='0';
 	signal blockSet 	: std_logic;
 	signal readyBlock   : std_logic:='1';
 	type sb is array(0 to 15) of std_logic_vector(31 downto 0);
 	signal SubBlock: sb;
+	
+	
+   --Seven Seg signals
+   signal sel : std_logic_vector(2 downto 0);
+   signal Rdigest : std_logic_vector(31 downto 0);
 
   
   --FSM Signals
 		type states is(
-	Idle,
+	Ready,
 	PreProcessor,
---	Ready,
 	ScheduleMessage,
 	CompressBlock,
-	Append
+	Append,
+	Idle
 );
-	signal current_state : states:=Idle;
+	signal current_state : states:= Ready;
 	
 --	COMPONENT PaddedMessageRegFile IS
 --	PORT
@@ -99,6 +133,19 @@ architecture behaviour of CompressionFunction is
 --    dataOut : out  STD_LOGIC_VECTOR (31 downto 0)
 --	);
 --	END COMPONENT;
+
+	COMPONENT sevsegdebug is 
+PORT(    R:IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+	      leds:OUT STD_LOGIC_VECTOR (1 TO 7);
+	      leds1:OUT STD_LOGIC_VECTOR (1 TO 7);
+	      leds2:OUT STD_LOGIC_VECTOR (1 TO 7);
+	      leds3:OUT STD_LOGIC_VECTOR (1 TO 7);
+         leds4:OUT STD_LOGIC_VECTOR (1 TO 7);
+	      leds5:OUT STD_LOGIC_VECTOR (1 TO 7);
+	      leds6:OUT STD_LOGIC_VECTOR (1 TO 7);
+	      leds7:OUT STD_LOGIC_VECTOR (1 TO 7));
+END COMPONENT;
+
 
 
 	
@@ -114,6 +161,19 @@ begin
 --			dataOut	=> memout
 --	);
 
+	sevseg : sevsegdebug
+	PORT MAP( R=>Rdigest,
+				 leds=>led,
+				 leds1=>led1,
+				 leds2=>led2,
+				 leds3=>led3,
+				 leds4=>led4,
+				 leds5=>led5,
+				 leds6=>led6,
+				 leds7=>led7	 
+	);
+	
+	sel<= sw2&sw1&sw0;
 
 	
 process(clock,lastBlock, blockSet)
@@ -122,142 +182,98 @@ process(clock,lastBlock, blockSet)
 	if(clock'Event and clock='1')then
 		case current_state is
 		
-		when Idle =>
-		state<="000";
-		if(ss = "aaa")then
-			current_state<=Idle;
-		else
+		when Ready=>
+			state_out<="000";
+			readyBlock<='1';
+			lastBlock<='0';
 			current_state<=PreProcessor;
-			end if;
+			
 			
 		when PreProcessor =>
-		ss_t<= ss;
-		state<="001";
-		if (lastBlock='1')then
-			ss<="aaa";
-			current_state<=Idle;
-		else
+		state_out<="001";
+--			readyBlock_t<=readyBlock;
+--			lastBlock_t<=lastBlock;
 			if (readyBlock='1') then
-				nBlocks<= output'length/512;
-				l<=output'length;
-				if(nBlocks /= 0)then
-						x<=1;
-				end if;
-				nBlocks_t <= nBlocks;
-				
-				
-				x_t <= x after 10 ns;
---
-----				len_unsigned_t <= shift_left(to_unsigned(ss'length,64),3);
-----				len_unsigned<=len_unsigned_t;
-----				messageLength_t<= std_logic_vector(shift_left(to_unsigned(ss'length,64),3));
-----				k0_t <= (447- (shift_left(to_unsigned(ss'length,64),3))) mod 512;
-----				output_t<=preProcess(ss,output,k0,shift_left(to_unsigned(ss'length,64),3),std_logic_vector(shift_left(to_unsigned(ss'length,64),3)));
-----				message_t <= setBlock(output,message,x);
-					lastBlock_t<=lastBlock;
-					readyBlock_t<=readyBlock;
-				
+				output<=std_LOGIC_VECTOR(to_unsigned(0,output'length));
 				len_unsigned<=shift_left(to_unsigned(ss'length,64),3);
-				len_unsigned_t<=len_unsigned after 10 ns;
-				messageLength<=std_logic_vector(len_unsigned)AFTER 10 ns;
-				messageLength_t<=messageLength after 10 ns;
-				k0<=(447- len_unsigned) mod 512;
-				k0_t<=k0 after 10ns;
-				
-				output(TO_INTEGER(len_unsigned))<='1'after 10 ns;
-				for m in 1 to 447 loop
-					exit when m=((TO_INTEGER(k0))+1);
-					output((TO_INTEGER(len_unsigned)) +m)<='0'; 
-				end loop;	
-					output_t<=output after 10 ns;
 				for m in  ss'range loop
 					output((8*m)-8 to (8*m)-1)<=std_logic_vector(to_unsigned(character'pos(ss(m)),8));
 				end loop;
-				output_t<=output after 50 ns;
-				for m in 0 to 63 loop
-					output(output'length-64+m)<=messageLength(m) after 20 ns;
-				end loop;
-				output_t<=output after 50 ns;
-
-				message<=setBlock(output,message,x);
-				message_t<=message after 50 ns;
-				
+				messageLength<=std_logic_vector(shift_left(to_unsigned(ss'length,64),3));
+				output(ss'length*8)<='1'after 10 ns;
+				output(output'length-64 to output'LENGTH-1)<=std_logic_vector(shift_left(to_unsigned(ss'length,64),3));
+				readyBlock<='0';
+				current_state<=Preprocessor;
+			elsif(readyBlock='0') then
 				for m in 0 to 15 loop
-					SubBlock(m)<=message(m*32 to (m*32)+31);
+					SubBlock(m)<= output(m*32 to (m*32)+31);
 				end loop;
-
---				len_unsigned_t<=len_unsigned after 15 ns;
---				messageLength_t<=messageLength after 10 ns;
---				k0_t<=k0 after 20 ns;
---				output_t<=output after 50 ns;
---				message_t<=message after 10 ns;
---				L1:for ii in 0 to 15 loop
---					L2:for jj in  31 downto 0 loop
---						SubBlock(ii)<=message(ii*32 to (ii*32)+31);
---					end loop L2;
---				end loop L1;
---				if(x=(nBlocks))then
---						lastBlock<='1';
---				else
---					lastBlock<='0';
---				end if;
---			elsif(readyBlock='0')then
---					message<=setBlock(output,message,x);
---					L3:for ii in 0 to 15 loop
---						L4:for jj in  31 downto 0 loop
---							SubBlock(ii)<=message(ii*32 to (ii*32)+31);
---						end loop L4;
---					end loop L3;
---				if(x=(nBlocks))then
---						lastBlock<='1';
---				else
---					lastBlock<='0';
---				end if;	
---			end if;
-			current_state<=ScheduleMessage;
-		end if;
-		end if;
-	
+				lastBlock<='1';
+				current_state <= ScheduleMessage;
+			end if;
+			
 			
 			when ScheduleMessage =>
-			state<="010";
+			state_out<="010";
 					readyBlock <= '0';					
-					if k < gateval2 then					-- If k < 16 then the message scheduler is the padded input message
+					if k < 16 then					-- If k < 16 then the message scheduler is the padded input message
 --						outmem <=memout;
 --						addrout <= memaddr;
-						outmem<=SubBlock(to_integer(unsigned(k)));
-						schedule(to_integer(unsigned(k))) <= memout;
-						k <= std_logic_vector(unsigned(k) + 1);
+--						outmem<=SubBlock(k);
+						schedule(k) <= SubBlock(k);
+						k <= k+1;
 --						memaddr <= std_logic_vector(unsigned(memaddr) + 1);
-					elsif(k < gateval1) then									-- Else, W_k = s1(W[k]-2) + W[k]-7 + s0(W[k]-15) + W[k]-16
-						schedule(to_integer(unsigned(k))) <= std_logic_vector(unsigned(s1(schedule(to_integer(unsigned(k)) - 2))) + unsigned(schedule(to_integer(unsigned(k)) - 7)) + unsigned(s0(schedule(to_integer(unsigned(k)) - 15))) + unsigned(schedule(to_integer(unsigned(k)) - 16)));
-						k <= std_logic_vector(unsigned(k) + 1);
+					elsif(k < 64) then									-- Else, W_k = s1(W[k]-2) + W[k]-7 + s0(W[k]-15) + W[k]-16
+						schedule(k) <= std_logic_vector(unsigned(s1(schedule(k-2))) + unsigned(schedule(k-7)) + unsigned(s0(schedule(k-15))) + unsigned(schedule(k-16)));
+						k <= k+1;
 					else
+					  a <=H0; 
+					  b <=H1;
+					  c <=H2;
+					  d <=H3;
+					  e <=H4;
+					  f <=H5;
+					  g <=H6;
+					  h <=H7;
+					  T1 <= std_logic_vector(unsigned(H7)+ unsigned(schedule(0)) + unsigned(Z1(H4)) + unsigned(ch(H4,H5,H6)) + unsigned(constants(0)));
+					  T2 <= std_logic_vector(unsigned(maj(H0,H1,H2)) + unsigned(Z0(H0)));
 						current_state<=CompressBlock;
 					end if;
+					
 				
 				when CompressBlock =>
-				state<="011";
+				state_out<="011";
 					readyBlock <= '0';
 			
-							 if j < gateval1 then
-									sigma1   <= Z1(e);
-									ch 	  <= (e and f) xor (not(e) and g);
-									T1 <= std_logic_vector(unsigned(h)+ unsigned(schedule(to_integer(unsigned(j)))) + unsigned(sigma1) + unsigned(ch) + unsigned(constants(to_integer(unsigned(j)))));
-									sigma0   <= Z0(a);
-									maj 	  <= std_logic_vector((a and b) xor (a and c) xor (b and c));
-									T2 <= std_logic_vector(unsigned(maj) + unsigned(sigma0));
+							if j<64 then
 									h <= g;
 									g <= f;
 									f <= e;
-									e <= std_logic_vector( unsigned( d ) + unsigned( T1 ) );
+									e <= std_logic_vector( unsigned( d ) + unsigned( T1));
 									d <= c;
 									c <= b;
-									b <= a;
-									a <= std_logic_vector( unsigned( T1 ) + unsigned( T2 ) );
-									j <= std_logic_vector(unsigned(j) + 1);
+									b <= a ;
+									a <= std_logic_vector( unsigned( T1 ) + unsigned(T2));
+									
+									j <= j + 1;
+									
+--									j_t <= j;
+--									a_t <=a;
+--									b_t <=b;
+--									c_t <=c;
+--									d_t <=d;
+--									e_t <=e;
+--									f_t <=f;
+--									g_t <=g;
+--									h_t <=h;
+									
+									T1 <= std_logic_vector(unsigned(g)+ unsigned(schedule(j+1)) + unsigned(Z1(std_logic_vector( unsigned( d ) + unsigned( T1)))) + unsigned(ch(std_logic_vector( unsigned( d ) + unsigned( T1)),e,f)) + unsigned(constants(j+1)));
+									T2 <= std_logic_vector(unsigned(maj(std_logic_vector( unsigned( T1 ) + unsigned(T2)),a,b)) + unsigned(Z0(std_logic_vector( unsigned( T1 ) + unsigned(T2)))));
+--									T1_t <= T1;
+--									T2_t <= T2;
 							 else
-									compressed <= '1';
+					
+							compressed <= '1';
 							 end if;
 							 
 						  if (compressed = '1') then
@@ -269,15 +285,16 @@ process(clock,lastBlock, blockSet)
 									 Hdigest( 95 downto 64 ) <= std_logic_vector( unsigned( Hdigest( 95 downto 64 ) ) + unsigned( f ) );
 									 Hdigest( 63 downto 32 ) <= std_logic_vector( unsigned( Hdigest( 63 downto 32 ) ) + unsigned( g ) );
 									 Hdigest( 31 downto 0 ) <= std_logic_vector( unsigned( Hdigest( 31 downto 0 ) ) + unsigned( h ) );
+							  if (lastBlock = '1') then
+									current_state<=Append;
+								else
+									current_state <= PreProcessor;
+							  end if;
 						  end if; 
-						  if (lastBlock = '1') then
-								current_state<=Append;
-						  else
-								current_state<=PreProcessor;
-						  end if;
+						  
 								
 				when Append =>
-				state<="100";
+				state_out<="100";
 					readyBlock <= '0';
 					
 					digest( 31 downto 0 ) <= Hdigest( 31 downto 0 );
@@ -290,22 +307,45 @@ process(clock,lastBlock, blockSet)
 					digest( 255 downto 224 ) <= Hdigest( 255 downto 224 );
 					
 					
-					current_state<=PreProcessor;
-									
+					current_state<=Idle;
+					
+					
+				when Idle =>
+				state_out<="111";
+				current_state<=Idle;
+--				readyBlock_t<=readyBlock;
+--				lastBlock_t<=lastBlock;
+											
 						
 	end case;
 end if;
---	n<=nBlocks;
-	--mes<=output;
-	--len<=messageLength;
---	sched <= a ;--schedule(0);
---	sched1 <= b; --schedule(1);
---	sched32 <= schedule(32);
+--len_unsigned_t<=len_unsigned;
+--messageLength_t<=messageLength;
+--output_t<=output;
+--outmem<=SubBlock(0);
+--temp<=SubBlock(15);
+----	n<=nBlocks;
+--	--mes<=output;
+--	--len<=messageLength;
+----	sched <= a ;--schedule(0);
+----	sched1 <= b; --schedule(1);
+----	sched32 <= schedule(32);
 --	sched63 <= schedule(63);
---	compressdone <= compressed;
---	temp1 <= T1;
---	kval <= k;
-
+----	compressdone <= compressed;
+----	temp1 <= T1;
+----	kval <= k;
+--j_t<=j;
 end process;
+
+						with sel select
+								Rdigest <= digest(255 downto 224) when "000",
+											  digest(223 downto 192) when "001",
+											  digest(191 downto 160) when "010",
+											  digest(159 downto 128) when "011",
+											  digest(127 downto 96) when "100",
+											  digest(95 downto 64) when "101",
+											  digest(63 downto 32) when "110",
+											  digest(31 downto 0) when "111",
+											  x"00000000" when others;
 
 end architecture behaviour;
